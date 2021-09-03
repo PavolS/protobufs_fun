@@ -24,8 +24,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-console.log(
-    `Some valid examples for json input:
+console.log(`Some valid examples for json input:
     {"name":"pete", "id":"123", "years": 30}
     {"name":"pete", "id":"1234567891011121314", "years": 30, "picture": "wertzuiojhgcvbnkoiuztss"}
     {"name":"pete", "id":"1234", "years": 90, "nickname": "P"}`)
