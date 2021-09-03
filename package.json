@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "proto": "protoc --ts_out . --proto_path protos protos/person.proto",
     "build": "npm run proto && webpack --mode production",
+    "build:noproto": "webpack --mode production --entry ./toy-example-no-proto.ts",
     "start": "npm run build && node dist/main.js"
   },
   "author": "",

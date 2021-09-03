@@ -16,6 +16,7 @@ console.log(pete)
 // let pete_json_str = JSON.stringify(pete) --> cannot work with bigint
 
 const pete_json_str = '{"name":"pete", "id":"1234567891011121314", "years": 30, "picture": "wertzuiojhgcvbnkoiuztss"}'
+// const pete_json_str = '{"name":"pete", "id":"1234567891011121314", "years": 30}'
 
 console.log(pete_json_str)
 
@@ -24,7 +25,8 @@ const N = 1e5
 let start = performance.now();
 for (let i=0; i<N; ++i) {
     pete = JSON.parse(pete_json_str)
-   // assert( pete0.id === pete.id)
+   // assert(pete.name === pete0.name)
+   // assert( pete.id === pete0.id)
 }
 let end = performance.now();
 console.log(`JSON needed ${end-start}ms for ${N} decodes`)
