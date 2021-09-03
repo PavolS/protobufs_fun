@@ -8,5 +8,6 @@ message Person {
     uint64 id = 2;
     int32 years = 3 [json_name = "baz"];
     // maybe a jpeg?
-    optional bytes data = 5;
+    optional bytes picture = 5;
+    optional string nickname = 6;
 }

@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "proto": "protoc --ts_out . --proto_path protos protos/person.proto",
+    "build": "npm run proto && webpack --mode production"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "@protobuf-ts/plugin": "^2.0.3"
   },
   "devDependencies": {
+    "node-loader": "^2.0.0",
     "ts-loader": "^9.2.5",
     "typescript": "^3.9.10",
     "webpack": "^5.51.2",

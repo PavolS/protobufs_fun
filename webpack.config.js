@@ -1,7 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  entry: './person.ts',
+    target: "node",
+    node: {
+        __dirname: false,
+    },    
+    externals: {
+        fs: "require('fs')",
+        readline: "require('readline')",
+    },    
+  entry: './toy-example.ts',
   module: {
     rules: [
       {
@@ -9,6 +17,10 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.node$/,
+        loader: "node-loader",
+      },      
     ],
   },
   resolve: {
