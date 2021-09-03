@@ -27,22 +27,23 @@ const rl = readline.createInterface({
 console.log(
     `Some valid examples for json input:
     {"name":"pete", "id":"123", "years": 30}
-    {"name":"pete", "id":"1234567891011121314", "years": 30, "picture": [255, 254, 253, 252]}
+    {"name":"pete", "id":"1234567891011121314", "years": 30, "picture": "wertzuiojhgcvbnkoiuztss"}
     {"name":"pete", "id":"1234", "years": 90, "nickname": "P"}`)
 
-rl.on("close", function() {
-    console.log("\nBYE BYE !!!");
-    process.exit(0);
-});
-
 function ask() {
-     rl.question("What kind of person do ypu want to create? ", function(json) {
+     rl.question("What kind of person do you want to create? ", function(json) {
         console.log(`Received '${json}'`)
         if (json === '') {
-            rl.close();
-        }   else {
-            const someone = Person.fromJsonString(json)
-            console.log(someone)
+            console.log("\nBYE BYE !!!");
+            process.exit(0);
+        } else {
+            try {
+                const someone = Person.fromJsonString(json)
+                console.log(someone)
+            }
+            catch (ex) {
+                console.error(ex)
+            }
             ask()
         }
     }); 
